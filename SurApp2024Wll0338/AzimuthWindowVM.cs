@@ -1,103 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZXYWll0338;
+﻿using ZXYWll0338;
+using Point = ZXYWll0338.Point;
+
 
 namespace SurApp2024Wll0338
 {
     public class AzimuthWindowVM : NotificationObject
     {
-        private string? aName = "";
-        public string? AName
+        private Point _A = new();
+        public Point A
         {
-            get => aName;
+            get => _A;
             set
             {
-                if(aName != value)
+                if (_A != value)
                 {
-                    aName = value;
-                    RaisePropertyChanged();
-                }
-            } 
-        }
-
-        private double aX;
-        public double AX
-        {
-            get => aX;
-            set
-            {
-                if(aX != value)
-                {
-                    aX = value; 
+                    _A = value;
                     RaisePropertyChanged();
                 }
             }
         }
-        private double aY;
-        public double AY
+        private Point _B = new();
+        public Point B
         {
-            get => aY;
+            get => _B;
             set
             {
-                if (aY != value)
+                if (_B != value)
                 {
-                    aY = value;
+                    _B = value;
                     RaisePropertyChanged();
                 }
             }
         }
 
-        //B点
-        private string bName = "";
-        public string BName
-        {
-            get => bName;
-            set
-            {
-                if (bName != value)
-                {
-                    bName = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        private double bX;
-        public double BX
-        {
-            get => bX;
-            set
-            {
-                if (bX != value)
-                {
-                    bX = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-        private double bY;
-        public double BY
-        {
-            get => bY;
-            set
-            {
-                if (bY != value)
-                {
-                    bY = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-        private string? azName="";
+        private string? azName = "";
         public string? AzName
         {
-            get =>azName;
+            get => azName;
             set
             {
-                if(azName != value)
+                if (azName != value)
                 {
                     azName = value;
                     RaisePropertyChanged();
@@ -111,7 +53,7 @@ namespace SurApp2024Wll0338
             get => azValue;
             set
             {
-                if(azValue != value)
+                if (azValue != value)
                 {
                     azValue = value;
                     RaisePropertyChanged();
@@ -124,7 +66,7 @@ namespace SurApp2024Wll0338
             get => dist;
             set
             {
-                if(dist != value)
+                if (dist != value)
                 {
                     dist = value;
                     RaisePropertyChanged();
@@ -135,26 +77,21 @@ namespace SurApp2024Wll0338
 
         public void Switch()
         {
-            string? tmp=AName;
-            AName = BName; 
-            BName = tmp;
+            (A, B) = (B, A);        //元组表达式
+            //Point p=new Point();
+            //p = A;
+            //A = B;
+            //B = p;
 
-            double t = AX;
-            AX = BX;
-            BX = t;
-
-            t = AY;
-            AY= BY;
-            BY=t;
         }
 
         public void Calculate()
         {
-            var ad = SurMath.Azimuth(AX, BX, AY, BY);
+            var ad = SurMath.Azimuth(A.X, B.X, A.Y, B.Y);
             AzValue = SurMath.RadianToString(ad.a);
             Dist = ad.d;
 
-            AzName = $"{AName}-->{BName}坐标方位角";
+            AzName = $"{A.Name}-->{B.Name}坐标方位角";
         }
 
     }

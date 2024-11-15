@@ -45,11 +45,11 @@
                     <ColumnDefinition Width="90*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="点名"/>
-                <TextBox Grid.Column="1" x:Name="textBoxBna" Text="{Binding AName}"/>
+                <TextBox Grid.Column="1"  Text="{Binding A.Name}"/>
                 <Label Content="X=" Grid.Column="2"/>
-                <TextBox Grid.Column="3" x:Name="textBoxBX" Text="{Binding AX}"/>
+                <TextBox Grid.Column="3" Text="{Binding A.X}"/>
                 <Label Content="Y=" Grid.Column="4"/>
-                <TextBox Grid.Column="5" x:Name="textBoxBY" Text="{Binding AY}"/>
+                <TextBox Grid.Column="5" Text="{Binding A.Y}"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="方向点" Grid.Row="1">
@@ -63,11 +63,11 @@
                     <ColumnDefinition Width="90*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="点名"/>
-                <TextBox Grid.Column="1" x:Name="textBoxEn" Text="{Binding BName}"/>
+                <TextBox Grid.Column="1" Text="{Binding B.Name}"/>
                 <Label Content="X=" Grid.Column="2"/>
-                <TextBox Grid.Column="3" x:Name="textBoxEX" Text="{Binding BX}"/>
+                <TextBox Grid.Column="3" Text="{Binding B.X}"/>
                 <Label Content="Y=" Grid.Column="4"/>
-                <TextBox Grid.Column="5" x:Name="textBoxEY" Text="{Binding BY}"/>
+                <TextBox Grid.Column="5" Text="{Binding B.Y}"/>
             </Grid>
         </GroupBox>
         
@@ -94,9 +94,9 @@
                     <ColumnDefinition Width="90*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content ="{Binding AzName}"/>
-                <TextBox Grid.Column="1" x:Name="textBox_A" Text="{Binding AzValue}"/>
+                <TextBox Grid.Column="1" Text="{Binding AzValue}"/>
                 <Label Content="距离"  Grid.Column="2" />
-                <TextBox Grid.Column="3" x:Name="textBox_Dist" Text="{Binding Dist}"/>
+                <TextBox Grid.Column="3" Text="{Binding Dist}"/>
 
 
             </Grid>

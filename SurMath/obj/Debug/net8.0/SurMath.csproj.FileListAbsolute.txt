@@ -10,3 +10,15 @@ D:\测绘工程\测绘程序设计\实验二\SurMath\obj\Debug\net8.0\refint\Sur
 D:\测绘工程\测绘程序设计\实验二\SurMath\obj\Debug\net8.0\SurMath.pdb
 D:\测绘工程\测绘程序设计\实验二\SurMath\obj\Debug\net8.0\ref\SurMath.dll
 D:\测绘工程\测绘程序设计\实验二\SurMath\obj\Debug\net8.0\SurMath.sourcelink.json
+D:\测绘工程\测绘程序设计\31\SurMath\bin\Debug\net8.0\SurMath.deps.json
+D:\测绘工程\测绘程序设计\31\SurMath\bin\Debug\net8.0\SurMath.dll
+D:\测绘工程\测绘程序设计\31\SurMath\bin\Debug\net8.0\SurMath.pdb
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.GeneratedMSBuildEditorConfig.editorconfig
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.AssemblyInfoInputs.cache
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.AssemblyInfo.cs
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.csproj.CoreCompileInputs.cache
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.sourcelink.json
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.dll
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\refint\SurMath.dll
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\SurMath.pdb
+D:\测绘工程\测绘程序设计\31\SurMath\obj\Debug\net8.0\ref\SurMath.dll
