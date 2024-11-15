@@ -7,6 +7,18 @@ namespace SurApp2024Wll0338
 {
     public class AzimuthWindowVM : NotificationObject
     {
+        /// <summary>
+        /// 初始值
+        /// </summary>
+        public AzimuthWindowVM() 
+        {
+#if DEBUG
+            A = new Point { Name = "GP01", X = 50342.464, Y = 3528.978 };
+            A = new Point { Name = "GP02", X = 50289.874, Y = 3423.232 };
+#endif
+        }
+
+
         private Point _A = new();
         public Point A
         {
@@ -94,6 +106,12 @@ namespace SurApp2024Wll0338
 
             AzName = $"{A.Name}-->{B.Name}坐标方位角";
         }
-        public ICommand CalCommand => new RelayCommand((_) => Calculate(), (_) => true);
+   
+        /// <summary>
+        /// 判断计算按键是否可用
+        /// </summary>
+        public bool CanCalculate => Math.Abs(A.X - B.X) >= 0.01 || Math.Abs(A.Y - B.Y) >= 0.01;
+        public ICommand CalCommand => new RelayCommand((_) => Calculate(), (_) => CanCalculate);
+
     }
 }
