@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SurAppWin/1.0.0": {
+        "dependencies": {
+          "SurMath": "1.0.0"
+        },
+        "runtime": {
+          "SurAppWin.dll": {}
+        }
+      },
+      "SurMath/1.0.0": {
+        "runtime": {
+          "SurMath.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SurAppWin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SurMath/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
