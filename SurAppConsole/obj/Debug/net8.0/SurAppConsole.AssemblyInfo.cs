@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SurAppConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3c1a3c86c6857f872d679a5ad374b5aea0cb58d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9850541cb1545311d67615085ba2282626e068bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SurAppConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SurAppConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

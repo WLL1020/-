@@ -1,11 +1,12 @@
-﻿using System.Windows.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System.ComponentModel;
 using ZXYWll0338;
-using Point = ZXYWll0338.Point;
 
 
 namespace SurApp2024Wll0338
 {
-    public class AzimuthWindowVM : NotificationObject
+    public partial class AzimuthWindowVM : ObservableObject
     {
         /// <summary>
         /// 初始值
@@ -13,91 +14,42 @@ namespace SurApp2024Wll0338
         public AzimuthWindowVM() 
         {
 #if DEBUG
-            A = new Point { Name = "GP01", X = 50342.464, Y = 3528.978 };
-            B = new Point { Name = "GP02", X = 50289.874, Y = 3423.232 };
+            A = new GPoint { Name = "GP01", X = 50342.464, Y = 3528.978 };
+            B = new GPoint { Name = "GP02", X = 50289.874, Y = 3423.232 };
 #endif
+            A.PropertyChanged += OnPointPropertyChanged;
+            B.PropertyChanged += OnPointPropertyChanged;
         }
 
-
-        private Point _A = new();
-        public Point A
+        private void OnPointPropertyChanged(object? sender,System.ComponentModel.PropertyChangedEventArgs e)
         {
-            get => _A;
-            set
-            {
-                if (_A != value)
-                {
-                    _A = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-        private Point _B = new();
-        public Point B
-        {
-            get => _B;
-            set
-            {
-                if (_B != value)
-                {
-                    _B = value;
-                    RaisePropertyChanged();
-                }
-            }
+            CalculateCommand.NotifyCanExecuteChanged();
         }
 
+        [ObservableProperty]
+        private GPoint _A = new();
+
+        [ObservableProperty]
+        private GPoint _B = new();
+
+        [ObservableProperty]
         private string? azName = "";
-        public string? AzName
-        {
-            get => azName;
-            set
-            {
-                if (azName != value)
-                {
-                    azName = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
 
+        [ObservableProperty]
         private string azValue = "";
-        public string AzValue
-        {
-            get => azValue;
-            set
-            {
-                if (azValue != value)
-                {
-                    azValue = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
+
+        [ObservableProperty]
         private double dist;
-        public double Dist
-        {
-            get => dist;
-            set
-            {
-                if (dist != value)
-                {
-                    dist = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
 
 
+        [RelayCommand]
         public void Switch()
         {
-            (A, B) = (B, A);        //元组表达式
-            //Point p=new Point();
-            //p = A;
-            //A = B;
-            //B = p;
-
+            (A, B) = (B, A);        //元组表达式          
         }
-        public ICommand SwitchCommand => new RelayCommand((_)=> Switch());
+
+        [RelayCommand(CanExecute = nameof(CanCalculate))]
+        //[RelayCommand]
         public void Calculate()
         {
             var ad = SurMath.Azimuth(A.X, B.X, A.Y, B.Y);
@@ -111,7 +63,5 @@ namespace SurApp2024Wll0338
         /// 判断计算按键是否可用
         /// </summary>
         public bool CanCalculate => Math.Abs(A.X - B.X) >= 0.01 || Math.Abs(A.Y - B.Y) >= 0.01;
-        public ICommand CalCommand => new RelayCommand((_) => Calculate(), (_) => CanCalculate);
-
     }
 }
