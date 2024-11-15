@@ -16,7 +16,10 @@
       },
       "SurMath/1.0.0": {
         "runtime": {
-          "SurMath.dll": {}
+          "SurMath.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

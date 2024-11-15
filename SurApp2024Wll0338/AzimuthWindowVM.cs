@@ -1,4 +1,5 @@
-﻿using ZXYWll0338;
+﻿using System.Windows.Input;
+using ZXYWll0338;
 using Point = ZXYWll0338.Point;
 
 
@@ -84,7 +85,7 @@ namespace SurApp2024Wll0338
             //B = p;
 
         }
-
+        public ICommand SwitchCommand => new RelayCommand((_)=> Switch());
         public void Calculate()
         {
             var ad = SurMath.Azimuth(A.X, B.X, A.Y, B.Y);
@@ -93,6 +94,6 @@ namespace SurApp2024Wll0338
 
             AzName = $"{A.Name}-->{B.Name}坐标方位角";
         }
-
+        public ICommand CalCommand => new RelayCommand((_) => Calculate(), (_) => true);
     }
 }

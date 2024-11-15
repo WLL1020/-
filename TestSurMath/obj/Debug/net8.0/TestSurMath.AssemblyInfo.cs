@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestSurMath")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3c1a3c86c6857f872d679a5ad374b5aea0cb58d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestSurMath")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestSurMath")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

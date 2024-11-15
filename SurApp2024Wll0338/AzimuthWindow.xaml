@@ -8,6 +8,9 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=local:AzimuthWindowVM}"
         Title="坐标方位角计算" Height="300" Width="480">
+    <Window.DataContext>
+        <local:AzimuthWindowVM/>
+    </Window.DataContext>
     <Window.Resources>
         <Style TargetType="TextBox">
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -78,8 +81,15 @@
                     <ColumnDefinition Width="50*"/>
                     <ColumnDefinition Width="30*"/>                   
                 </Grid.ColumnDefinitions>
-                <Button Content="起点 &lt;-&gt;方向点" Grid.Column="1" x:Name="Switch" Click="Switch_Click"/>
-                <Button Content="计算" Grid.Column="2" x:Name="Cal" Click="Cal_Click"/>
+                <Button Content="起点 &lt;-&gt;方向点" 
+                        Grid.Column="1" x:Name="Switch"
+                        Command="{Binding SwitchCommand}"
+                        />
+                <Button Content="计算"
+                        Grid.Column="2" 
+                        x:Name="Cal" 
+                        Command="{Binding CalCommand}"
+                        />
 
 
             </Grid>
