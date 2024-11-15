@@ -107,12 +107,7 @@
                 <TextBox Grid.Column="1" Text="{Binding AzValue}"/>
                 <Label Content="距离"  Grid.Column="2" />
                 <TextBox Grid.Column="3" Text="{Binding Dist}"/>
-
-
             </Grid>
         </GroupBox>
-
-
-
     </Grid>
 </Window>

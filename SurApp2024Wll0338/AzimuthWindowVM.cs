@@ -14,7 +14,7 @@ namespace SurApp2024Wll0338
         {
 #if DEBUG
             A = new Point { Name = "GP01", X = 50342.464, Y = 3528.978 };
-            A = new Point { Name = "GP02", X = 50289.874, Y = 3423.232 };
+            B = new Point { Name = "GP02", X = 50289.874, Y = 3423.232 };
 #endif
         }
 
